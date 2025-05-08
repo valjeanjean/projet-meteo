@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet" />
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+        <div class="meteo-form">
+            
+            <div class="search-by-city">
+                <input class="city-input" placeholder="Ville..." type="text" onkeyup="findCitybyName(this.value)">
+                <i class="material-icons search-icon" style="font-size:50px;color: white;">search</i>
+            </div>
+            
+            <div class="search-coordinates">
+                <form class="coordinates-inputs">
+                    <input class="latitude" placeholder="latitude..." type="text">
+                    <input class="longitude" placeholder="longitude..." type="text">
+                </form>
+            </div>
+        
+        </div>
+
+
+        <template class="meteo-display-template">
+            <h1 class="city-name"></h1>
+            <img src="" alt="" class="weatherConditionImage">
+            <h2 class="temperature"></h2>
+        </template>
+
+    <script src="script.js"></script>
+</body>
+</html>

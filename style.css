@@ -1,0 +1,105 @@
+
+body{
+    
+    background: linear-gradient(120deg, #14a0c7 30%, #1222b1 100%);
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    justify-content: center;
+
+}
+
+input{
+    
+    border: none;
+    color: white;
+    font-size: 1em;
+    font-weight: bold;
+}
+
+i{
+    
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+}
+
+.material-icons.search-icon{
+    
+    width: 50px;
+}
+
+.meteo-form{
+    
+    width: 75vw;
+    height: 20vh;
+    padding-top: 25px;
+    align-content: center;
+    
+    
+}
+.search-by-city{
+    
+    display: flex;
+    gap: 20px;
+    padding-bottom: 25px;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+
+.search-coordinates{
+    
+    display: flex;
+    width: 100%;
+    
+}
+
+.coordinates-inputs{
+
+    display: flex;
+    gap: 40px;
+    width: 100%;
+}
+
+.city-input{
+    
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
+    width: 90%;
+    border-radius: 2px;
+    padding: 17px;
+    background: linear-gradient(#4571a7, #487fa9);
+}
+
+.search-by-city i{
+    
+    width: 10%;
+    
+}
+
+.latitude, .longitude{
+    
+    border-radius: 2px;
+    padding: 13px;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
+    width: 50%;
+    background: linear-gradient(#4571a7, #487fa9);
+}
+
+
+
+
+@media screen and (min-width: 600px) {
+    
+
+    .meteo-form{
+    
+    width: 40vw;
+    
+    
+    
+}
+}
