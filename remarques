@@ -1,0 +1,4 @@
+Ou sinon faire une fonction qui affiche une sélection de villes en fonction de son input, et ensuite prendre la value de l'input, la balancer 
+dans la fonction pour récupérer latitude/longitude, puis append comme ça on a déjà le nom de la ville
+Si il fait jour (1) modifier le backgroundcolor pour un truc plus clair et jaune
+si il fait nuit (0) modifier le background color pour un truc plus sombre et bleu

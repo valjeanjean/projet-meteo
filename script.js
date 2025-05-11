@@ -26,7 +26,6 @@ async function findCitybyName(cityInput){
     console.log(cityByName);
 
     createElements(cityByName);
-
 }
 
 async function findCityByCoordinates(){
@@ -43,8 +42,8 @@ async function findCityByCoordinates(){
             console.log("Erreur de récupération de classe .latitude et/ou .longitude");
             return null;
         }
-        //https://api.open-meteo.com/v1/forecast?latitude=52.52&longitude=13.41&hourly=temperature_2m&current=temperature_2m,rain,precipitation,apparent_temperature,is_day
-        const response = await fetch("https://api.open-meteo.com/v1/forecast?latitude=" + cityLatitude.value + "&longitude=" + cityLongitude.value + "&hourly=temperature_2m&current=temperature_2m,rain,precipitation,is_day");
+
+        const response = await fetch("https://api.open-meteo.com/v1/forecast?latitude=" + cityLatitude.value + "&longitude=" + cityLongitude.value + "&hourly=temperature_2m&current=temperature_2m,rain,precipitation,is_day,weather_code,relative_humidity_2m,wind_speed_10m,apparent_temperature");
         if(response.ok == false){
 
             return;
@@ -61,8 +60,45 @@ async function findCityByCoordinates(){
 async function createElements(cityObject){
 
 
+    // console.log("Fonction createElements");
+    // const cityLatitude = cityObject.latitude;
+    // const cityLongitude = cityObject.longitude;
+    // console.log(cityLatitude);
+    // console.log(cityLongitude);
+
+    // const response = await fetch("https://nominatim.openstreetmap.org/reverse?lat=" + cityLatitude + "&lon=" + cityLongitude + "&format=json");
+
+    // const cityObject = await response.json();
+
+    // const cityName = cityObject.address.city;
+    // const cityTemperature = cityObject.current.temperature_2m;
+    // const isDay = cityObject.current.is_day;
+    // if(isDay == 0){
+
+    //     console.log("Il fait nuit");
+    // }else{
+
+    //     console.log("Il fait jour");
+    // }
+
     /* if cityObject.current.is_day == 0 NUIT == 1 JOUR */
 
 
+
+}
+
+function displayElements(elementsToAppend){
+
+    
+}
+
+function findCityByGeoLocalisation(){
+
+    const geoButton = document.querySelector(".geo-localisation-btn");
+    geoButton.addEventListener("click", ()=>{
+
+        //fetch?
+
+    });
 
 }
