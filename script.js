@@ -1,31 +1,64 @@
-async function findCitybyName(cityInput){
+async function filterList(cityInput){
 
-    const citySearchedInput = await fetch("https://geocoding-api.open-meteo.com/v1/search?name=" + cityInput)
+    const response = await fetch("https://geocoding-api.open-meteo.com/v1/search?name=" + cityInput + "&count=5&language=en&format=json");
+    const citiesList = response.json();
+    const template = document.querySelector(".cities-list-template");
+    const newList = template.content.cloneNode(true);
+    const citiesListed = newList.querySelector("li");
+    for(let i = 0; i < citiesListed.length; i++){
 
-    if(citySearchedInput.ok == false){
+        citiesListed[i] = citiesList.results[i].name;
+    }
+
+    citiesListed.forEach(city =>{
+
+        const text = city.textContent.toLowerCase();
+        if(text.includes(cityInput)){
+
+            task.style.display = "flex";
+
+        }else{
+
+            task.style.display = "none";
+        }
+
+    });
+    
+
+
+
+    //findCitybyName()
+
+}
+
+async function findCityByName(city){
+
+    const response = await fetch("https://geocoding-api.open-meteo.com/v1/search?name=" + city + "&count=5&language=en&format=json");
+    console.log("Test geocoding APi objet :");
+    console.log(response);
+
+    if(response.ok == false){
 
         console.log("Ville non reconnue");
         return null;
     }
 
-    const citySearched = await citySearchedInput.json();
+    const citySearched = await response.json();
     
     const citySearchedLongitude = citySearched.results[0].longitude;
     const citySearchedLatitude = citySearched.results[0].latitude;
     //console.log(citySearchedLatitude);
     //console.log(citySearchedLongitude);
-
-    const response = await fetch("https://api.open-meteo.com/v1/forecast?latitude=" + citySearchedLatitude + "&longitude=" + citySearchedLongitude + "&hourly=temperature_2m&current=temperature_2m,rain,precipitation,is_day");
-    if(response.ok == false){
-
-        return;
-    }
     
-    const cityByName = await response.json();
     console.log("Objet ville par nom");
-    console.log(cityByName);
+    console.log(citySearched);
 
-    createElements(cityByName);
+    createElements(citySearched);
+
+    /*
+        cityName = objet.results[0].name;
+    
+    */
 }
 
 async function findCityByCoordinates(){
@@ -71,7 +104,23 @@ async function createElements(cityObject){
     // const cityObject = await response.json();
 
     // const cityName = cityObject.address.city;
+    // const cityCountry = cityObject.address.country;
+    // if(cityCountry == null){
+    //      cityCountry = "N/A";
+    //    }
+    // address.town = cityName ?
+    // if(cityName == null){
+    //      console.log("Aucune ville ne correspond")
+    //      cityName = cityObject.address.town;
+    //      if(cityName == null){
+    //          cityName = "N/A" ?
+    //          return null;
+    //    }
+    //
+    //      
+    // }
     // const cityTemperature = cityObject.current.temperature_2m;
+
     // const isDay = cityObject.current.is_day;
     // if(isDay == 0){
 
@@ -81,7 +130,8 @@ async function createElements(cityObject){
     //     console.log("Il fait jour");
     // }
 
-    /* if cityObject.current.is_day == 0 NUIT == 1 JOUR */
+    // /* if cityObject.current.is_day == 0 NUIT == 1 JOUR */
+
 
 
 

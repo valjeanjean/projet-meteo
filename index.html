@@ -14,8 +14,15 @@
         <div class="meteo-form">
             
             <div class="search-by-city">
-                <input class="city-input" placeholder="Ville..." type="text" onkeyup="findCitybyName(this.value)">
-                <i class="material-icons search-icon" style="font-size:50px;color: white;">search</i>
+                <input class="city-input" placeholder="Ville..." type="text" onkeyup="findCityByName(this.value)">
+                <div class="list">
+                    <li class="list-li">La Seyne-sur-Mer</li>
+                    <li class="list-li">lu</li>
+                    <li class="list-li">az</li>
+                    <li class="list-li">aaaaa</li>
+                    <li class="list-li">bbbbbbb</li>
+                </div>
+                <!-- Mettre icone -->
             </div>
             
             <div class="search-coordinates">
@@ -32,10 +39,15 @@
             <i class='fas fa-search-location' style='font-size:50px'></i>
         </button>
 
+        <template class="cities-list-template">
+            <li></li>
+        </template>
+
         <template class="meteo-display-template">
-            <h1 class="city-name"></h1>
+            <h1 class="country"></h1>
+            <h2 class="city-name"></h2>
             <img src="" alt="" class="weatherConditionImage">
-            <h2 class="temperature"></h2>
+            <h3 class="temperature"></h3>
         </template>
 
     <script src="script.js"></script>
