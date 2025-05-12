@@ -5,9 +5,12 @@ async function filterList(cityInput){
     const template = document.querySelector(".cities-list-template");
     const newList = template.content.cloneNode(true);
     const citiesListed = newList.querySelector("li");
+    const listContainer = document.querySelector(".list");
     for(let i = 0; i < citiesListed.length; i++){
 
+        // A changer car citiesListed n'est plus un tableau car c'est un queryselector simple
         citiesListed[i] = citiesList.results[i].name;
+        listContainer.appendChild()
     }
 
     citiesListed.forEach(city =>{
