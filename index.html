@@ -14,13 +14,13 @@
         <div class="meteo-form">
             
             <div class="search-by-city">
-                <input class="city-input" placeholder="Ville..." type="text" onkeyup="findCityByName(this.value)">
+                <input class="city-input" placeholder="Ville..." type="text" onkeyup="filterList(this.value)">
                 <div class="list">
-                    <li class="list-li">La Seyne-sur-Mer</li>
+                    <!-- <li class="list-li">La Seyne-sur-Mer</li>
                     <li class="list-li">lu</li>
                     <li class="list-li">az</li>
                     <li class="list-li">aaaaa</li>
-                    <li class="list-li">bbbbbbb</li>
+                    <li class="list-li">bbbbbbb</li> -->
                 </div>
                 <!-- Mettre icone -->
             </div>
@@ -31,7 +31,11 @@
                     <input class="longitude" placeholder="longitude..." type="text">
                 </form>
             </div>
-        
+            
+        </div>
+
+        <div class="weather-display-container">
+            
         </div>
 
         <button class="geo-localisation-btn">

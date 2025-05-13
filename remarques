@@ -9,3 +9,5 @@ Visuel :
     - Nom ville
     - Image illustrant le temps actuel
     - Température
+
+Faire une fonction getCoordinates pour appliquer au maximum le SRP ?

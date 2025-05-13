@@ -6,8 +6,8 @@ body{
     margin: 0;
     padding: 0;
     position: relative;
-    display: flex;
-    justify-content: center;
+    display: grid;
+    justify-items: center;
 }
 
 .meteo-form{
@@ -39,9 +39,9 @@ body{
     width: 100%;
     border: 1px solid #ccc;
     text-align: center;
-    background: rgb(255, 255, 255);
+    background: rgb(113, 147, 219);
     font-size: 1.3em;
-    color: rgb(255, 255, 255);
+    color: rgb(13, 120, 207);
     font-weight: bold;
 }
 
@@ -51,7 +51,7 @@ body{
     height: 50px;
     margin: 0;
     padding: 0;
-    background-color: #4571a7;
+    background-color: #ffffff;
     opacity: 0.7;
     align-content: center;
 }
@@ -67,6 +67,17 @@ body{
     display: flex;
     gap: 40px;
     width: 100%;
+}
+
+.weather-display-container{
+
+    position: absolute;
+    display: grid;
+    justify-items: center;
+    font-size: 1.3em;
+    align-self: center;
+    color: white;
+    
 }
 
 input{
