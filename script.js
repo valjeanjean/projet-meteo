@@ -414,6 +414,7 @@ async function createElements(cityObject){
     if(cityIsDay == 1){
 
         img.src = weatherConditionObject.day.image;
+        //img.classList.add("")
 
     }else{
 
@@ -423,9 +424,19 @@ async function createElements(cityObject){
     displayElements(newDiv);
 }
 
+
+// fetch("http://ksekjfk",{
+//     method : "POST",
+//     body : JSON.stringify,
+//     headers : {
+//         "Content-Type" : "application/json"
+//     }
+// })
+
 function displayElements(elementsToAppend){
 
     const displayWeatherContainer = document.querySelector(".weather-display-container");
+    displayWeatherContainer.innerHTML = "";
     displayWeatherContainer.appendChild(elementsToAppend);
     
 }

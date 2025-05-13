@@ -22,7 +22,7 @@ body{
     gap: 20px;
     padding-bottom: 25px;
     width: 100%;
-    height: 40%;
+    height: 70%;
 }
 
 .city-input{
@@ -71,11 +71,11 @@ body{
 
 .weather-display-container{
 
-    position: absolute;
-    display: grid;
-    justify-items: center;
-    font-size: 1.3em;
-    align-self: center;
+    display: flex;
+    flex-direction: column;
+
+    font-size: 1.5em;
+    align-items: center;
     color: white;
     
 }
@@ -92,6 +92,12 @@ button{
     
     outline: none;
     border: none;
+}
+
+h1, h2, h3{
+
+    margin: 0;
+    padding: 0;
 }
 
 ul, li{
@@ -149,6 +155,11 @@ i{
     font-size: 2.5em;
 }
 
+.weatherConditionImage{
+
+    width: 70%;
+}
+
 @media screen and (min-width: 600px) {
 
     input{
@@ -166,3 +177,4 @@ i{
         font-size: 3.5em;
     }
 }
+
